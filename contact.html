@@ -30,6 +30,9 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<!-- Gmail_SMTP -->
+	<script src="https://smtpjs.com/v3/smtp.js"></script>  
+
 
 </head>
 <body>
@@ -115,7 +118,7 @@
 						<div class="search-bar-tablecell">
 							<h3>Search For:</h3>
 							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<button type="submit">Search <i class="fas fa-search" onclick="sendEmail()"></i></button>
 						</div>
 					</div>
 				</div>
@@ -296,6 +299,22 @@
 	<script src="assets/js/form-validate.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+	<!-- SMTP JS -->
+	<script>
+		function sendEmail() {
+			Email.send({
+			Host: "smtp.gmail.com",
+			Username : "ashadkhira@gmail.com",
+			Password : "yweugyflcvgmazkr",
+			To : 'ashadkhira@gmail.com',
+			From : "ashadkhira@gmail.com",
+			Subject : "<email subject>",
+			Body : "<email body>",
+			}).then(
+				message => alert("mail sent successfully")
+			);
+		}
+	</script>
 	
 </body>
 </html>
