@@ -2718,10 +2718,16 @@ table.order-details tbody td {
 
 .single-product-item {
   -webkit-box-shadow: 0 0 20px #e4e4e4;
-  box-shadow: 0 0 20px #e4e4e4;
+  box-shadow: 0 0 20px #F28123;
   padding-bottom: 50px;
-  border-radius: 5px;
+  border-radius: 15px;
+  height: 350px;
 }
+
+.product-section .single-product-item {
+  height: 350px;
+}
+
 
 /* -----------------------------------------------------------------------------
 

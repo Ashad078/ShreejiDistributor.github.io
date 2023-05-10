@@ -30,8 +30,26 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+
 	<!-- Gmail_SMTP -->
-	<script src="https://smtpjs.com/v3/smtp.js"></script>  
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+	<script type="text/javascript">
+		function sendEmail() {
+		  Email.send({
+			Host: "smtp.gmail.com",
+			Username: "ashadkhira@gmail.com",
+			Password: "ygycowldybedypej",
+			To: 'ashadkhira@gmail.com',
+			From: "ashadkhira@gmail.com",
+			Subject: "Sending Email using javascript",
+			Body: "Well that was easy!!",
+		  })
+			.then(function (message) {
+			  alert("mail sent successfully")
+			});
+		}
+	  </script>
 
 
 </head>
@@ -118,7 +136,7 @@
 						<div class="search-bar-tablecell">
 							<h3>Search For:</h3>
 							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search" onclick="sendEmail()"></i></button>
+							<button type="submit">Search <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</div>
@@ -153,7 +171,7 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+						<form action="https://formspree.io/f/mdovbqvg" method="post">
 							<p>
 								<input type="text" placeholder="Name" name="name" id="name">
 								<input type="email" placeholder="Email" name="email" id="email">
@@ -163,7 +181,7 @@
 								<input type="text" placeholder="Subject" name="subject" id="subject">
 							</p>
 							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
-							<input type="hidden" name="token" value="FsWga4&@f6aw" />
+							<!-- <input type="hidden" name="token" value="FsWga4&@f6aw" /> -->
 							<p><input type="submit" value="Submit"></p>
 						</form>
 					</div>
@@ -299,22 +317,5 @@
 	<script src="assets/js/form-validate.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
-	<!-- SMTP JS -->
-	<script>
-		function sendEmail() {
-			Email.send({
-			Host: "smtp.gmail.com",
-			Username : "ashadkhira@gmail.com",
-			Password : "yweugyflcvgmazkr",
-			To : 'ashadkhira@gmail.com',
-			From : "ashadkhira@gmail.com",
-			Subject : "<email subject>",
-			Body : "<email body>",
-			}).then(
-				message => alert("mail sent successfully")
-			);
-		}
-	</script>
-	
 </body>
 </html>
